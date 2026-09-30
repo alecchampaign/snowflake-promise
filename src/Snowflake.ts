@@ -22,18 +22,16 @@ export class Snowflake {
     configureOptions?: ConfigureOptions | boolean
   ) {
     if (loggingOptions && loggingOptions.logLevel) {
-      SDK.configure({ logLevel: loggingOptions.logLevel });
+      SDK.configure({ logLevel: loggingOptions.logLevel.toUpperCase() as SDK.LogLevel });
     }
     this.logSql = (loggingOptions && loggingOptions.logSql) || null;
 
-    // For backward compatibility, configureOptions is allowed to be a boolean, but it’s
-    // ignored. The new default settings accomplish the same thing as the old
-    // `insecureConnect` boolean.
+    // For backward compatibility, configureOptions is allowed to be a boolean, but it is ignored.
 
     if (typeof configureOptions === 'boolean') {
       console.warn(
         '[snowflake-promise] the insecureConnect boolean argument is deprecated; ' +
-          'please remove it or use the ocspFailOpen configure option'
+          'please remove it or use the disableOCSPChecks configure option'
       );
     } else if (typeof configureOptions === 'object') {
       SDK.configure(configureOptions);

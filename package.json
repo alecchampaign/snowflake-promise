@@ -15,10 +15,11 @@
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
   "scripts": {
-    "prepare": "del-cli build && tsc"
+    "prepare": "del-cli build && tsc",
+    "test": "npm run prepare && node --test test/*.test.js"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=20"
   },
   "devDependencies": {
     "@types/node": "^10.17.55",
@@ -29,6 +30,6 @@
     "typescript": "^3.9.9"
   },
   "dependencies": {
-    "snowflake-sdk": "^1.9.0"
+    "snowflake-sdk": "3.3.0"
   }
 }

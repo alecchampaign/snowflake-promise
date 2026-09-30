@@ -1,12 +1,5 @@
 //
-// This example shows how to use the library in traditional Promise style. You
-// might do this if you are using an older version of Node that doesn’t support
-// async/await, or simply if you prefer the Promise/then syntax.
-//
-// (You could also transpile async/await code using TypeScript or Babel, which
-// allows it to run on older versions of Node.)
-//
-// This library supports Node 4.0.0 and higher.
+// This example shows how to use the library in traditional Promise style.
 //
 
 var Snowflake = require('snowflake-promise').Snowflake;

@@ -6,9 +6,7 @@ export interface ConfigureOptions {
   ocspFailOpen?: boolean;
 
   /**
-   * If true, disable OCSP check at connection. See
-   * https://community.snowflake.com/s/article/How-to-turn-off-OCSP-checking-in-Snowflake-client-drivers
-   * for additional details. (Default: false)
+   * If true, disable OCSP checks for connections. (Default: false)
    */
-  insecureConnect?: boolean;
+  disableOCSPChecks?: boolean;
 }

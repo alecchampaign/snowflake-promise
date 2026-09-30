@@ -4,6 +4,8 @@ A Promise-based interface to your [Snowflake](https://www.snowflake.net/) data w
 
 This is a wrapper for the [Snowflake SDK](https://www.npmjs.com/package/snowflake-sdk) for Node.js. It provides a Promise-based API instead of the core callback-based API.
 
+Node.js 20 or newer is required.
+
 ## Installation
 
 * `npm i snowflake-promise`
@@ -53,12 +55,12 @@ The constructor takes up to three arguments:
   * `logLevel` (optional: `'error' | 'warn' | 'debug' | 'info' | 'trace'`): Turns on
     SDK-level logging.
 * `configureOptions`
+  * `disableOCSPChecks` (optional, boolean) (default: `false`): Disables OCSP checks.
   * `ocspFailOpen` (optional, boolean) (default: `true`): Enables OCSP fail-open
     functionality. See <https://www.snowflake.com/blog/latest-changes-to-how-snowflake-handles-ocsp/> for more information.
 
 ## More examples
 
 * [Streaming result rows](examples/streaming.js)
-* [Using traditional Promise `then` syntax (and older versions of Node.js)](examples/oldSchool.js)
-    * Node v6.9.5 is the oldest supported version
+* [Using traditional Promise `then` syntax](examples/oldSchool.js)
 * [Turn on logging](examples/logging.js)
